@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Datos del Corredor</title>
+  <style>
+    body { font-family: sans-serif; text-align: center; }
+    .container { margin-top: 50px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1 id="titulo"></h1>
+    <img id="imagen_perfil" src="" alt="Imagen del corredor" style="max-width:300px;">
+    <h2>Datos de registro:</h2>
+    <ul id="lista_datos"></ul>
+  </div>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const nombre = urlParams.get('nombre');
+    const carrera = urlParams.get('carrera');
+    
+    document.getElementById('titulo').innerText = `Hola, ${nombre}!`;
+    document.getElementById('imagen_perfil').src = 'URL_DE_TU_IMAGEN_DE_PERFIL';
+    
+    const lista = document.getElementById('lista_datos');
+    const item1 = document.createElement('li');
+    item1.innerText = `Nombre: ${nombre}`;
+    const item2 = document.createElement('li');
+    item2.innerText = `Carrera: ${carrera}`;
+
+    lista.appendChild(item1);
+    lista.appendChild(item2);
+  </script>
+</body>
+</html>
